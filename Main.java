@@ -10,7 +10,10 @@ public class Main {
         System.out.println("**************************************");
         optionsSelection();
 
-    }
+	}
+	
+
+	//Displays menu options, takes in user input
     private static void optionsSelection() {
     	
     	
@@ -69,14 +72,21 @@ public class Main {
 	                break;
 	            case 3:
 	                System.out.println("You are about the delete all your expenses! \nConfirm again by selecting the same option...\n");
-	                int con_choice = sc.nextInt();
-	                if(con_choice==options){
+					int con_choice = -1;
+					try{con_choice = sc.nextInt();
+						if(con_choice==options){
 	                       expenses.clear();
 	                    System.out.println(expenses+"\n");
-	                    System.out.println("All your expenses are erased!\n");
-	                } else {
+						System.out.println("All your expenses are erased!\n");}
+						else {
 	                    System.out.println("Oops... try again!");
-	                }
+						}
+					}
+					catch(Exception e){
+						
+	                
+					}
+	                
 	                break;
 	            case 4:
 	                sortExpenses(expenses);
